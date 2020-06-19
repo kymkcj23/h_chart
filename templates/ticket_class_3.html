@@ -1,0 +1,45 @@
+<!--templates/ticket_class_3.html-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Django Highcharts Example</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+    <div id="container" style="margin-top: 20px;"></div>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script>
+        Highcharts.chart('container',
+            {
+                "chart":
+                    { "borderColor": "#9DB0AC", "borderWidth": 3
+                    },
+                "title":
+                    {"text": "타이타닉 생존율"
+                    },
+                "xAxis":
+                    {"categories": ["1등석", "2등석", "3등석"]
+                    },
+                "yAxis": [
+                    {"labels": {"format": "{value} %", "style": {"color": "blue"}
+                    },
+                    "title":
+                        {"text": "생존율", "style": {"color": "blue"}}
+                        },
+                    {"labels": {"format": "{value} 명",
+
+
+                        "style": {"color": "black"}}, "title": {"text": "인원", "style": {"color": "black"}},
+                    "opposite": "true"}], "tooltip": {"shared": "true"},
+                "legend": {"layout": "vertical", "align": "left", "x": 120, "verticalAlign": "top", "y": 100, "floating": "true"},
+                "series": [{"name": "생존", "type": "column", "yAxis": 1, "data": [200, 119, 181], "color": "green",
+                    "tooltip": {"valueSuffix": " \uba85"}}, {"name": "비생존", "type": "column", "yAxis": 1, "color": "red", "data": [123, 158, 528],
+                    "tooltip": {"valueSuffix": " \uba85"}}, {"name": "생존율", "type": "spline", "data": [61.91950464396285, 42.96028880866426, 25.52891396332863],
+                    "tooltip": {"valueSuffix": " %"}}]});
+    </script>
+</body>
+</html>
